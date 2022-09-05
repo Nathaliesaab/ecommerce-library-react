@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import UndrawBooks from "../assets/Undraw_Books.svg";
+import { Link } from 'react-scroll'
 
 export const Landing = () => {
     return (
@@ -12,7 +12,7 @@ export const Landing = () => {
                         <h2>
                             Find your dream book with <span className="purple">Library</span>
                         </h2>
-                        <Link to="#features">
+                        <Link to="features" spy={true} smooth={true} duration={200}>
                             <button className="btn">Browse books</button>
                         </Link>
                     </div>
