@@ -31,7 +31,7 @@ export const Book = ({ book }) => {
                         </figure>
                     </Link>
                     <div className="book__title">
-                        <Link to={`/books/${book.id}`} className="book__title--link">
+                        <Link to={`/book/${book.id}`} className="book__title--link">
                             {book.title}
                         </Link>
                     </div>
