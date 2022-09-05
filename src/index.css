@@ -137,7 +137,7 @@ button:active {
   color: #7342d6;
   font-size: 20px;
   position: relative;
-  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .cart__length {
