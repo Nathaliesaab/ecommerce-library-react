@@ -226,8 +226,8 @@ LANDING
 }
 
 header {
-  height: calc(100vh - 80px);
-  padding-top: 75px;
+  min-height: calc(100vh - 80px);
+  padding-top: 30px;
 }
 
 .header__container {
