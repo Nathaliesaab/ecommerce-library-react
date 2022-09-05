@@ -8,7 +8,7 @@ export const Landing = () => {
             <header>
                 <div className="header__container">
                     <div className="header__description">
-                        <h1>Australias most awarded online library platfrom</h1>
+                        <h1>Most awarded online library platfrom</h1>
                         <h2>
                             Find your dream book with <span className="purple">Library</span>
                         </h2>
