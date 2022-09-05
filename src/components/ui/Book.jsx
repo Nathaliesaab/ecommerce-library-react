@@ -25,7 +25,7 @@ export const Book = ({ book }) => {
         <div className="book">
             {img ? (
                 <>
-                    <Link to={`/books/${book.id}`}>
+                    <Link to={`/book/${book.id}`}>
                         <figure className="s__img--wrapper">
                             <img src={img.src} alt="" className="book__img" />
                         </figure>

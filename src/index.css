@@ -111,7 +111,6 @@ button:active {
 }
 
 .nav__list {
-  position: relative;
   margin-left: 16px;
   display: flex;
   align-items: center;
@@ -138,7 +137,7 @@ button:active {
   color: #7342d6;
   font-size: 20px;
   position: relative;
-  margin-right: 8px;
+  margin-left: 8px;
 }
 
 .cart__length {
@@ -179,7 +178,7 @@ button:active {
   visibility: hidden;
   transition: all 300ms ease;
   opacity: 0;
-  /* transform: translate(100%); */
+  transform: translate(100%);
 }
 
 .menu--open {
@@ -251,7 +250,7 @@ header {
   padding: 20px;
 
   /* Added this after the tutorial to 
-    show it over the wave on larger screens */
+  show it over the wave on larger screens */
   z-index: 50;
 }
 
@@ -362,11 +361,6 @@ FEATURES
   background-color: rgba(115, 66, 214, 0.1);
 }
 
-@keyframes pulse {
-  to {
-    background-position-x: -200%;
-  }
-}
 .books {
   display: flex;
   flex-wrap: wrap;
@@ -400,7 +394,6 @@ FEATURES
 .skeleton {
   background-color: rgb(227, 227, 227) !important;
   margin-bottom: 8px;
-  animation: 1s pulse linear infinite;
 }
 
 .book__title--skeleton {
