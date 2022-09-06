@@ -1,8 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import EmptyCart from "../assets/empty_cart.svg";
 
-const Cart = ({ cart, changeQuantity, removeItem }) => {
+const Cart = ({ cart, changeQuantity, removeItem, setCart }) => {
     const total = () => {
         let price = 0;
         cart.forEach((item) => {
@@ -17,6 +18,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                     <div className="row">
                         <div className="book__selected--top">
                             <h2 className="cart__title">Cart</h2>
+                            {cart.length > 0 && <button className="btn" onClick={() => setCart([])}>Clear</button>}
                         </div>
                         <div className="cart">
                             <div className="cart__header">
@@ -29,8 +31,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                                     return (
                                         <div className="cart__item" key={book.id}>
                                             <div className="cart__book">
-                                                <img
-                                                    src={book.url}
+                                                <img src={book.url}
                                                     alt=""
                                                     className="cart__book--img"
                                                 />
@@ -41,18 +42,11 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                                                     <span className="cart__book--price">
                                                         ${(book.salePrice || book.originalPrice).toFixed(2)}
                                                     </span>
-                                                    <button
-                                                        className="cart__book--remove"
-                                                        onClick={() => removeItem(book)}
-                                                    >
-                                                        Remove
-                                                    </button>
                                                 </div>
                                             </div>
                                             <div className="cart__quantity">
-                                                <input
-                                                    type="number"
-                                                    min={0}
+                                                <input type="number"
+                                                    min={1}
                                                     max={99}
                                                     className="cart__input"
                                                     value={book.quantity}
@@ -60,6 +54,14 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                                                         changeQuantity(book, event.target.value)
                                                     }
                                                 />
+                                                <div>
+                                                    <button
+                                                        className="cart__book--remove"
+                                                        onClick={() => removeItem(book)}
+                                                    >
+                                                        <FontAwesomeIcon icon="fa-sharp fa-solid fa-trash" />
+                                                    </button>
+                                                </div>
                                             </div>
                                             <div className="cart__total">
                                                 $

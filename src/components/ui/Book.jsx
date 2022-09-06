@@ -19,15 +19,14 @@ export const Book = ({ book }) => {
         return () => {
             mountedRef.current = false;
         };
-    });
-
+    },[]);
     return (
         <div className="book">
-            {img ? (
-                <>
+            {/* {img ? (
+                <> */}
                     <Link to={`/book/${book.id}`}>
                         <figure className="s__img--wrapper">
-                            <img src={img.src} alt="" className="book__img" />
+                            <img src={book.url} alt="" className="book__img" />
                         </figure>
                     </Link>
                     <div className="book__title">
@@ -36,20 +35,19 @@ export const Book = ({ book }) => {
                         </Link>
                     </div>
                     <Rating rating={book.rating} />
-                    <Price
-                        originalPrice={book.originalPrice}
+                    <Price originalPrice={book.originalPrice}
                         salePrice={book.salePrice}
                     />
-                </>
+                {/* </>
             ) : (
-                <>
-                    {" "}
+                <> */}
+                    {/* {" "}
                     <div className="book__img--skeleton"></div>
                     <div className="skeleton book__title--skeleton"></div>
                     <div className="skeleton book__rating--skeleton"></div>
                     <div className="skeleton book__title--skeleton"></div>
                 </>
-            )}
+            )} */}
         </div>
     );
 };

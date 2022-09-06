@@ -15,6 +15,10 @@ import Cart from './pages/Cart';
 function App() {
   const [cart, setCart] = useState([]);
   function addToCart(book) {
+    cart.find((item) => +item.id === +book.id) 
+    ?
+    setCart(cart.map((item) => item.id === book.id ? { ...item, quantity: item?.quantity + 1 } : item))
+    :
     setCart([...cart, { ...book, quantity: 1 }]);
   }
 
@@ -54,6 +58,7 @@ function App() {
                 cart={cart}
                 changeQuantity={changeQuantity}
                 removeItem={removeItem}
+                setCart={setCart}
               />
             }
           />
